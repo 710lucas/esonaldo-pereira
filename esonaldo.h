@@ -7,6 +7,12 @@ class ednaldo{
         std::vector<std::string> nomes{"Birina", "Joao", "Beberrão", "Chico", "Melancia", "God"};
         std::vector<int> nomes_val{     0,         0,       0,         0,         0,       0};
         std::vector<std::string> nomes_str{ "0",  "0",       "0",     "0",      "0",      "0"};
+        /*
+            N -> modo de numero
+            S -> modo de str
+        */
+        std::vector<std::string> nomes_tip{ "N",  "N",       "N",     "N",      "N",      "N"};
+
         bool cond_bool = true; //usado para executar os comandos com if
 
     public:

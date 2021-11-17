@@ -16,14 +16,27 @@ void ednaldo::start(std::string inputln){
     if (is_name != -1 and cond_bool){
         //print str
         if(pals[1] == "respondeu"){
-            std::cout<<nomes_str[is_name]<<"\n";
+            if(nomes_tip[is_name] == "N")
+                std::cout<<nomes_val[is_name];
+            else
+                std::cout<<nomes_str[is_name];
         }
 
         // =  string
-        else if(pals[1] == "disse:"){
+        else if(pals[1] == "disse:" or pals[1] == "disse"){
             std::string tmp;
             for(int i = 2; i<pals.size(); i++){
-                tmp+=pals[i]+" ";
+                if(i < pals.size()-1)
+                    tmp+=pals[i]+" ";
+                else 
+                    tmp+=pals[i];
+            }
+            for(int i = 0; i<tmp.length(); i++){
+                    if(tmp[i] == '\\' and tmp[i+1] == 'n'){
+                        // std::cout<<"lol";
+                        tmp[i] = '\0';
+                        tmp[i+1] = '\n';
+                    }
             }
             nomes_str[is_name] = tmp;
 
@@ -45,21 +58,60 @@ void ednaldo::start(std::string inputln){
             std::cout<<nomes[nomes_val[is_name]]<<"\n";
         }
 
-        //print
-        else if(pals[1]+" "+pals[2]+" "+pals[3]+" "+pals[4] == "fale o que quiser"){
-            std::cout<<nomes_val[is_name]<<"\n";
-        }
+        //Input
+        /*
+            Ideia que veio na minha cabeça aqui
+            Fazer um switch onde uma variavel muda o tipo
+            por exemplo:
+            Birina numeros
+            Birina respondeu (birina responde o que tiver
+            armazenado na array de valores numericos)
+            Birina palavras
+            Birina respondeu (birina responde o que estiver
+            armazenado na array de strings )
 
-        //igualdade
-        else if(pals[1]+" "+pals[2]+" "+pals[3]+" "+pals[4]+" "+pals[5]+" "+pals[6] == "vamos procurar viver em igualdade com"){            
-            int is_name_ = get_arr_pos(pals[7]);
-            if (is_name_ != -1){
-                nomes_val[is_name] = nomes_val[is_name_];
+            Util para diminuir a quantidade de comandos
+            (e tambem para não ter dois prints diferentes e
+            nem dois modos diferentes de se declarar uma
+            variavel)
+        */
+        else if(pals[1] == "pergunta" or pals[1] == "pergunta," or pals[1] == "pergunta:"){
+            std::string tmp;
+            for(int i = 2; i<pals.size(); i++){
+                tmp+=pals[i]+" ";
+            }
+            if(nomes_tip[is_name] == "S"){
+                std::cout<<tmp<<": ";
+                std::string tmp_;
+                std::getline(std::cin, tmp_);
+                nomes_str[is_name] = tmp_;
+            }
+            else if(nomes_tip[is_name] == "N"){
+                std::cout<<tmp<<": ";
+                std::string tmp_;
+                std::getline(std::cin, tmp_);
+                nomes_val[is_name] = std::stoi(tmp_);
             }
         }
+
+        //Muda o tipo de variavel caso ja exista
+        else if(pals[1]+" "+pals[2]+" "+pals[3] == "is the brother"){
+            int tmp_ = get_arr_pos(pals[0]);
+            nomes_tip[tmp_] = "N";
+        }
+
+        else if(pals[1]+" "+pals[2]+" "+pals[3] == "is the sister"){
+            int tmp_ = get_arr_pos(pals[0]);
+            nomes_tip[tmp_] = "S";
+        }
+
+        //print defasado (util talvez no futuro)
+        // else if(pals[1]+" "+pals[2]+" "+pals[3]+" "+pals[4] == "fale o que quiser"){
+        //     std::cout<<nomes_val[is_name]<<"\n";
+        // }
         
         //maior
-        else if(pals[1]+" "+pals[2]+" "+pals[3]+" "+pals[4] == "what is the broder" and pals[6]=="ou"){
+        else if(pals[1]+" "+pals[2]+" "+pals[3]+" "+pals[4] == "what is the brother" and pals[6]=="ou"){
             int is, is_;
             is = get_arr_pos(pals[5]);
             is_ = get_arr_pos(pals[7]);
@@ -70,32 +122,80 @@ void ednaldo::start(std::string inputln){
                     nomes_val[is_name] = is_;
             }
         }
+        
+        //igualdade
+        else if(pals[1]+" "+pals[2]+" "+pals[3]+" "+pals[4]+" "+pals[5]+" "+pals[6] == "vamos procurar viver em igualdade com"){            
+            int is_name_ = get_arr_pos(pals[7]);
+            if (is_name_ != -1){
+                nomes_val[is_name] = nomes_val[is_name_];
+            }
+        }
+        //=========================
+        //        Matematica      =
+        //=========================
 
-        else{
-            std::cout<<"Comando invalido\nLinha:\n"<<inputln;
+        //Soma
+        else if(pals[1] == "e" and pals[3]+" "+pals[4]+" "+pals[5]+" "+pals[6] == "é igual ao que,"){
+            // std::cout<<"Lol";    
+            int tmp1, tmp2, tmp3;
+            tmp1 = nomes_val[is_name];
+            tmp2 = nomes_val[get_arr_pos(pals[2])];
+
+            tmp3 = tmp1+tmp2;
+
+            nomes_val[get_arr_pos(pals[7])] = tmp3;
+            
         }
 
-    }
+        //Subtração
+        else if(pals[1] == "entre" and pals[3] == "e" and pals[5]+" "+pals[6]+" "+pals[7]+" "+pals[8] == "qual é a diferença?"){
+            int tmp1, tmp2, tmp3;
+            tmp2 = nomes_val[get_arr_pos(pals[2])];
+            tmp3 = nomes_val[get_arr_pos(pals[4])];
 
-    else if (cond_bool and is_name == -1){
-        if(pals[1]+" "+pals[2]+" "+pals[3] == "is the broder"){
-            nomes.push_back(pals[0]);
-            nomes_val.push_back(0);
-            nomes_str.push_back("0");
+            tmp1 = tmp2 - tmp3;
+
+            nomes_val[is_name] = tmp1;
         }
 
         
+        else{
+            std::cout<<"Comando invalido\nLinha: "<<inputln;
+        }
 
+    }
+    /*
+        Fim do if de comandos que iniciam com variaveis
+    */
+
+    else if (cond_bool and is_name == -1){
+        //Cria nova variavel NUMERICA caso não exista
+        if(pals[1]+" "+pals[2]+" "+pals[3] == "is the brother"){
+            nomes.push_back(pals[0]);
+            nomes_val.push_back(0);
+            nomes_str.push_back("0");
+            nomes_tip.push_back("N");
+        }
+        
+        else if(pals[1]+" "+pals[2]+" "+pals[3] == "is the sister"){
+            nomes.push_back(pals[0]);
+            nomes_val.push_back(0);
+            nomes_str.push_back("0");
+            nomes_tip.push_back("S");
+        }
 
         else if(pals[0]+ " "+pals[1]+ " "+pals[2]+ " "+pals[3]+ " "+pals[4] == "e não é de nada"){
             cond_bool = true;
         }
 
         //if
+        /*
+            O if é apenas considerado verdadeiro se for igual a 1
+        */
         else if(pals[0]+" "+pals[1]+" "+pals[2]+" "+pals[3] == "voce quer ser tudo," or pals[0]+" "+pals[1]+" "+pals[2]+" "+pals[3] == "voce quer ser tudo"){
             int is_name_ = get_arr_pos(pals[4]);
             if (is_name_ != -1){
-                if(nomes_val[is_name_] <= 0){
+                if(nomes_val[is_name_] != 1){
                     cond_bool = false;
                 }
                 /*
@@ -104,6 +204,8 @@ void ednaldo::start(std::string inputln){
                     que se tenha uma maneira de não executar 
                     nenhum codigo ate que se atinja o fim
                     do if
+
+                    [Ja foi feito]
                 */
             }
             else{
