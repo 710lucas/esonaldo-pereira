@@ -12,6 +12,7 @@ Ou seja, o codigo deve parecer com uma musica de ednaldo pereira
     - Beberrão
     - Chico
     - Melancia
+    - God
 
 ## Outras coisas
 [x] Vale nada/tudo:
@@ -42,7 +43,7 @@ Ou seja, o codigo deve parecer com uma musica de ednaldo pereira
 [X] (nome) disse:
     equivalente a vale ... para strings
 
-[ ] (nome) pergunta (frase): (baseado em "Birina pergunta" da piada) 
+[X] (nome) pergunta (frase): (baseado em "Birina pergunta" da piada) 
     input onde frase é a pergunta do input
 
 [X] (nome) respondeu: (baseado em "Birina respondeu" piada)
