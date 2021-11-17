@@ -55,11 +55,13 @@ Variaveis são nomes que podem armazenar valores numericos ou palavras
 
 Por enquanto o If está bem confuso, então gambiarras devem ser utilizadas para q algo util consiga sair disso
 
-- ```
+```javascript
 voce quer ser tudo <var>
 <outros comandos>
 e não é de nada
-``` Executa os outros comandos caso a variavel seja igual a 1
+``` 
+
+Executa os outros comandos caso a variavel seja igual a 1
 
 ------
 
