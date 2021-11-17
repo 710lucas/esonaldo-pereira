@@ -29,14 +29,14 @@ int main(int argc, char** argv){
         std::string inp;
         while(std::getline(f, inp)){
             if (inp != "" and inp != " ")
-                ed.start(inp);
+                ed.start(inp, 1);
         }
     }
     else{
         while(true){
             std::string inp;
             std::getline(std::cin, inp);
-            ed.start(inp);
+            ed.start(inp, 0);
         }
     }
 

@@ -17,7 +17,7 @@ class ednaldo{
 
     public:
         //main loop
-        void start(std::string inputln);
+        void start(std::string inputln, int file);
 
         //usado para achar posição de elemento na array nomes
         int get_arr_pos(std::string inp); 

@@ -1,6 +1,6 @@
 #include "esonaldo.h"
 
-void ednaldo::start(std::string inputln){
+void ednaldo::start(std::string inputln, int file){
     std::vector<std::string> pals;
     // std::getline(std::cin, inputln);
 
@@ -20,6 +20,8 @@ void ednaldo::start(std::string inputln){
                 std::cout<<nomes_val[is_name];
             else
                 std::cout<<nomes_str[is_name];
+            if (file == 0)
+                std::cout<<"\n";
         }
 
         // =  string
