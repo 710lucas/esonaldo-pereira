@@ -80,6 +80,6 @@ Ou seja, o codigo deve parecer com uma musica de ednaldo pereira
     [video 1]
     soma, o resultado de nome+nome2 é armazenado em nome3
 
-[ ] (nome3), entre (nome) e (nome2), qual é a diferença?
+[X] (nome3), entre (nome) e (nome2), qual é a diferença?
     [video 1, 2:46]
     Subtração, mesma ideia que adição
