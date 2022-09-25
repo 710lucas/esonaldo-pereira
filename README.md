@@ -114,6 +114,8 @@ is the sister -> muda a variavel para seu tipo de string
 
 x what is the brother y ou z -> vê qual numero é o maior entre y e z e armazena o **nome da maior variavel** em x
 
+x what is the sister y ou z -> menor numero entre y e z e armazena **nome da variavel** em x
+
 x vamos procurar viver em igualdade com y -> igualar o valor numero de x com y
 
 x entre y e z qual é a diferença -> subtração, x = y-z

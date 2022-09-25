@@ -164,6 +164,19 @@ void ednaldo::start(std::string inputln, int file){
                     nomes_val[is_name] = is_;
             }
         }
+
+        //menor
+        else if(pals[1]+" "+pals[2]+" "+pals[3]+" "+pals[4] == "what is the sister" and pals[6]=="ou"){
+            int is, is_;
+            is = get_arr_pos(pals[5]);
+            is_ = get_arr_pos(pals[7]);
+            if(is != -1 and is_ != -1){
+                if(nomes_val[is]<nomes_val[is_])
+                    nomes_val[is_name] = is;
+                else 
+                    nomes_val[is_name] = is_;
+            }
+        }
         
         //igualdade
         else if(pals[1]+" "+pals[2]+" "+pals[3]+" "+pals[4]+" "+pals[5]+" "+pals[6] == "vamos procurar viver em igualdade com"){            
