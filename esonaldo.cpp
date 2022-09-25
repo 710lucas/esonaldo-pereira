@@ -19,16 +19,19 @@ void ednaldo::start(std::string inputln, int file){
 
         //print str
         if(pals[1] == "respondeu"){
-            if(nomes_tip[is_name] == "N")
+
+            if(nomes_tip[is_name] == "N"){
                 std::cout<<nomes_val[is_name];
-            else
+                std::cout<<"\n";
+            }
+            else if(nomes_tip[is_name] == "S")
                 std::cout<<nomes_str[is_name];
             
             //acho que significa que, caso o programa
             //esteja rodando a partir de um arquivo,
             // é necessário que se tenha um \n no final
-            if (file == 0)
-                std::cout<<"\n";
+            // if (file == 0)
+            //     std::cout<<"\n";
         }
 
 
@@ -123,8 +126,10 @@ void ednaldo::start(std::string inputln, int file){
                 std::cout<<tmp<<": ";
                 std::string tmp_;
                 std::getline(std::cin, tmp_);
-                if (isNumber(tmp_))
+                if (isNumber(tmp_)){
+                    // std::cout<<"valor informado é um numero \n";
                     nomes_val[is_name] = std::stoi(tmp_);
+                }
                 else
                     std::cout<<"O valor informado não é um numero\n";
             }
@@ -137,6 +142,7 @@ void ednaldo::start(std::string inputln, int file){
         }
 
         else if(pals[1]+" "+pals[2]+" "+pals[3] == "is the sister"){
+            // std::cout<<"Is siter que ja existe\n";
             int tmp_ = get_arr_pos(pals[0]);
             nomes_tip[tmp_] = "S";
         }
@@ -218,6 +224,7 @@ void ednaldo::start(std::string inputln, int file){
         }
         
         else if(pals[1]+" "+pals[2]+" "+pals[3] == "is the sister"){
+            // std::cout<<"Is sister que não existe\n";
             nomes.push_back(pals[0]);
             nomes_val.push_back(0);
             nomes_str.push_back("0");

@@ -32,6 +32,7 @@ int main(int argc, char** argv){
         while(std::getline(f, inp)){
             if (inp != "" and inp != " ")
                 ed.start(inp, 1);
+                // std::cout<<inp<<"\n";
         }
     }
     
@@ -44,6 +45,7 @@ int main(int argc, char** argv){
     }
 
     //std::cout<<"\nFim\n";
+    std::cout<<"\n\n [ FIM DO PROGRAMA, APERTE CTRL+C PARA FECHAR O PROGRAMA ]\n";
     int e;
     std::cin>>e;
     return 0;

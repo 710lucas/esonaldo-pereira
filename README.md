@@ -91,3 +91,33 @@ Cada comando será explicado separadamente
 
 `Birina is good` > coloca o nome da variavel de maior valor na tela
 
+
+
+## Coisas que o esonaldo ja tem:
+
+respondeu -> print
+
+disse -> str = "aaaa"
+
+vale nada -> int = 0
+
+vale tudo -> int  = 1
+
+vale x -> int = x
+
+is good -> Printa o **nome** de uma variavel que esta armazenada em outro
+pergunta -> input
+
+is the brother -> muda a variavel para seu tipo numerico
+
+is the sister -> muda a variavel para seu tipo de string
+
+x what is the brother y ou z -> vê qual numero é o maior entre y e z e armazena o **nome da maior variavel** em x
+
+x vamos procurar viver em igualdade com y -> igualar o valor numero de x com y
+
+x entre y e z qual é a diferença -> subtração, x = y-z
+
+voce quer ser tudo -> inicio do if
+
+e não é de nada -> fim do if
