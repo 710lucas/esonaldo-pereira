@@ -166,7 +166,7 @@ void ednaldo::start(std::string inputln, int file){
         }
 
         //menor
-        else if(pals[1]+" "+pals[2]+" "+pals[3]+" "+pals[4] == "what is the sister" and pals[6]=="ou"){
+        else if(pals[1]+" "+pals[2]+" "+pals[3]+" "+pals[4] == "who is the sister" and pals[6]=="ou"){
             int is, is_;
             is = get_arr_pos(pals[5]);
             is_ = get_arr_pos(pals[7]);
