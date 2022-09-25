@@ -1,5 +1,7 @@
 #include "esonaldo.h"
 
+bool isNumber(const std::string& str);
+
 void ednaldo::start(std::string inputln, int file){
     std::vector<std::string> pals;
     // std::getline(std::cin, inputln);
@@ -10,29 +12,44 @@ void ednaldo::start(std::string inputln, int file){
     //a posição da variavel sendo usada
     int is_name = get_arr_pos(pals[0]);
 
-    //Caso a primeira palavraseja um nome 
+    //Caso a primeira palavra seja um nome 
     //(ou seja, variavel)
 
     if (is_name != -1 and cond_bool){
+
         //print str
         if(pals[1] == "respondeu"){
             if(nomes_tip[is_name] == "N")
                 std::cout<<nomes_val[is_name];
             else
                 std::cout<<nomes_str[is_name];
+            
+            //acho que significa que, caso o programa
+            //esteja rodando a partir de um arquivo,
+            // é necessário que se tenha um \n no final
             if (file == 0)
                 std::cout<<"\n";
         }
 
+
         // =  string
         else if(pals[1] == "disse:" or pals[1] == "disse"){
+
             std::string tmp;
+
+            // começa a armazenar o que vem depois da 
+            // terceira palavra na variavel
+            // ex: Birina disse: jogo da velha
+            //      [0]    [1]    [2] [3] [4]
             for(int i = 2; i<pals.size(); i++){
                 if(i < pals.size()-1)
-                    tmp+=pals[i]+" ";
+                    tmp+=pals[i]+" "; //adiciona um espaço entre as palavras
                 else 
                     tmp+=pals[i];
             }
+
+            //adiciona a possibilidade de adicionar \n às
+            //strings
             for(int i = 0; i<tmp.length(); i++){
                     if(tmp[i] == '\\' and tmp[i+1] == 'n'){
                         // std::cout<<"lol";
@@ -40,22 +57,29 @@ void ednaldo::start(std::string inputln, int file){
                         tmp[i+1] = '\n';
                     }
             }
+
+            //armazena a string informada na variavel
             nomes_str[is_name] = tmp;
 
         }
 
+        //adiciona o valor 0 à variavel
         else if(pals[1] + " "+ pals[2] == "vale nada"){
             nomes_val[is_name] = 0;
         }
 
+        //adiciona o valor 1 à variavel
         else if(pals[1] + " "+ pals[2] == "vale tudo"){
             nomes_val[is_name] = 1;
         }
 
+        //adiciona o valor numerico informado á variavel
         else if(pals[1] == "vale" and pals[2]!="nada" and pals[2]!="tudo"){
             nomes_val[is_name] = std::stoi(pals[2]);
         }
 
+        //printa o nome da variavel que estiver armazenado dentro da variavel
+        //especificada
         else if(pals[1]+" "+pals[2] == "is good"){
             std::cout<<nomes[nomes_val[is_name]]<<"\n";
         }
@@ -77,22 +101,32 @@ void ednaldo::start(std::string inputln, int file){
             nem dois modos diferentes de se declarar uma
             variavel)
         */
+       // #interessante lucas do passado, muito  interessante...
+
+       //input
         else if(pals[1] == "pergunta" or pals[1] == "pergunta," or pals[1] == "pergunta:"){
             std::string tmp;
+
             for(int i = 2; i<pals.size(); i++){
                 tmp+=pals[i]+" ";
             }
+
             if(nomes_tip[is_name] == "S"){
                 std::cout<<tmp<<": ";
                 std::string tmp_;
                 std::getline(std::cin, tmp_);
                 nomes_str[is_name] = tmp_;
             }
+
+            //precisa verificar se o input é um numero
             else if(nomes_tip[is_name] == "N"){
                 std::cout<<tmp<<": ";
                 std::string tmp_;
                 std::getline(std::cin, tmp_);
-                nomes_val[is_name] = std::stoi(tmp_);
+                if (isNumber(tmp_))
+                    nomes_val[is_name] = std::stoi(tmp_);
+                else
+                    std::cout<<"O valor informado não é um numero\n";
             }
         }
 
@@ -137,6 +171,8 @@ void ednaldo::start(std::string inputln, int file){
         //=========================
 
         //Soma
+        //soma pals[1] com pals[2] e armazena em pals[7]
+        //fazer com que sintaxe seja mais flexivel
         else if(pals[1] == "e" and pals[3]+" "+pals[4]+" "+pals[5]+" "+pals[6] == "é igual ao que,"){
             // std::cout<<"Lol";    
             int tmp1, tmp2, tmp3;
@@ -150,6 +186,8 @@ void ednaldo::start(std::string inputln, int file){
         }
 
         //Subtração
+        // faz pals[2] - pals[4] e armazena
+        // em pals[0]
         else if(pals[1] == "entre" and pals[3] == "e" and pals[5]+" "+pals[6]+" "+pals[7]+" "+pals[8] == "qual é a diferença?"){
             int tmp1, tmp2, tmp3;
             tmp2 = nomes_val[get_arr_pos(pals[2])];
@@ -162,7 +200,7 @@ void ednaldo::start(std::string inputln, int file){
 
         
         else{
-            std::cout<<"Comando invalido\nLinha: "<<inputln;
+            std::cout<<"Comando invalido\nLinha: "<<inputln<<"\ne";
         }
 
     }
@@ -253,4 +291,13 @@ std::vector<std::string> ednaldo::separar_pals(std::string inp){
         }
     }
     return out;
+}
+
+
+bool isNumber(const std::string& str)
+{
+    for (char const &c : str) {
+        if (std::isdigit(c) == 0) return false;
+    }
+    return true;
 }

@@ -7,6 +7,7 @@ class ednaldo{
         std::vector<std::string> nomes{"Birina", "Joao", "Beberrão", "Chico", "Melancia", "God"};
         std::vector<int> nomes_val{     0,         0,       0,         0,         0,       0};
         std::vector<std::string> nomes_str{ "0",  "0",       "0",     "0",      "0",      "0"};
+        
         /*
             N -> modo de numero
             S -> modo de str

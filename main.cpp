@@ -19,10 +19,12 @@ int main(int argc, char** argv){
     ednaldo ed;
     bool file = false;
     int filepos = 0;
+
     if (argc>1){
         file = true;
         filepos = 1;
     }
+
     if(file){
         std::ifstream f;
         f.open(argv[filepos]);
@@ -32,6 +34,7 @@ int main(int argc, char** argv){
                 ed.start(inp, 1);
         }
     }
+    
     else{
         while(true){
             std::string inp;
