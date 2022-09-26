@@ -26,4 +26,7 @@ class ednaldo{
         //separa palavras de uma string e retorna um vetor
         std::vector<std::string> separar_pals(std::string inp);
 
+        bool in_while = false;
+        bool started_a_while = false;
+
 };

@@ -3,20 +3,39 @@
 bool isNumber(const std::string& str);
 
 void ednaldo::start(std::string inputln, int file){
+
     std::vector<std::string> pals;
     // std::getline(std::cin, inputln);
+    
 
-    pals = separar_pals(inputln+' ');
+    pals = separar_pals(inputln);
+    
+
+    // std::cout<<"amogus";
+
 
     //importante lembrar que is_name também é
     //a posição da variavel sendo usada
-    int is_name = get_arr_pos(pals[0]);
+    int is_name = 0;
+    if(pals.size()>=4){
+        if(pals[0] + pals[2] + pals[3] == "enquantoassimcontinuar"){
+            is_name = -2;
+            
+        }
+        else
+            is_name = get_arr_pos(pals[0]);
+    }
+    
+    else{
+        is_name = get_arr_pos(pals[0]);
+        
+    }
+
 
     //Caso a primeira palavra seja um nome 
     //(ou seja, variavel)
 
-    if (is_name != -1 and cond_bool){
-
+    if (is_name > -1 and cond_bool){
         //print str
         if(pals[1] == "respondeu"){
 
@@ -228,6 +247,7 @@ void ednaldo::start(std::string inputln, int file){
     */
 
     else if (cond_bool and is_name == -1){
+        
         //Cria nova variavel NUMERICA caso não exista
         if(pals[1]+" "+pals[2]+" "+pals[3] == "is the brother"){
             nomes.push_back(pals[0]);
@@ -248,7 +268,23 @@ void ednaldo::start(std::string inputln, int file){
             cond_bool = true;
         }
 
-        //if
+        else if(pals[0]+pals[1]+pals[2]+pals[3]+pals[4]+pals[5] == "eunaovouparardemesclar" or pals[0]+pals[1]+pals[2]+pals[3]+pals[4]+pals[5] == "eunãovouparardemesclar"){
+            // std::cout<<"reconheceu\n";
+            started_a_while = true; // IMPORTANTE, falar que acabou o while
+        }
+        
+        // else if(pals[0] == "enquanto"){
+        //     std::cout<<"leeeel\n";
+            
+        //     int is_name_ = get_arr_pos(pals[1]);
+        //     if (is_name_ != -1 and nomes_val[is_name_] == 1)
+        //         in_while = true;
+
+        //     else
+        //         in_while = false;
+        // }
+
+        // if
         /*
             O if é apenas considerado verdadeiro se for igual a 1
         */
@@ -273,12 +309,28 @@ void ednaldo::start(std::string inputln, int file){
             }
         }
 
+        
+
       
 
         else{
             std::cout<<"Nome não valido\nLinha:\n"<<inputln;
         }
     }
+
+    //While
+    else if(cond_bool and is_name == -2){
+        // std::cout<<"leeeel\n";
+        started_a_while = false;
+        int is_name_ = get_arr_pos(pals[1]);
+        // std::cout<<nomes_val[is_name_];
+            if (is_name_ > -1 and nomes_val[is_name_] == 1)
+                in_while = true;
+
+            else
+                in_while = false;
+    }
+
 
     else if(!cond_bool and pals[0]+ " "+pals[1]+ " "+pals[2]+ " "+pals[3]+ " "+pals[4] == "e não é de nada"){
         cond_bool =  true;
@@ -294,6 +346,8 @@ int ednaldo::get_arr_pos(std::string inp){
         if(inp == nomes[i] or inp == nomes[i]+"," or inp == nomes[i]+"?")
             return i; //retorna posição da array
     }
+    if (inp == "enquanto")
+        return -10;
     return -1; //retorna -1 pois não existe
     //criar mensagem de erro
 }
@@ -301,6 +355,7 @@ int ednaldo::get_arr_pos(std::string inp){
 std::vector<std::string> ednaldo::separar_pals(std::string inp){
     std::string temp;
     std::vector<std::string> out;
+    inp = inp+' ';
     for(int i = 0; i<inp.length(); i++){   
         if(inp[i] != ' '){
             temp += inp[i];
@@ -309,6 +364,7 @@ std::vector<std::string> ednaldo::separar_pals(std::string inp){
             out.push_back(temp);
             temp = "";
         }
+        // std::cout<<temp<<"==\n";
     }
     return out;
 }
