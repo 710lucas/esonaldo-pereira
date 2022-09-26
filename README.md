@@ -123,3 +123,5 @@ x entre y e z qual é a diferença -> subtração, x = y-z
 voce quer ser tudo -> inicio do if
 
 e não é de nada -> fim do if
+
+x e y é igual ao que, z? -> soma x com y e armazena em z
