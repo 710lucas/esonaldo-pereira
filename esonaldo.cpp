@@ -66,7 +66,7 @@ void ednaldo::start(std::string inputln, int file){
             for(int i = 2; i<pals.size(); i++){
                 if(i < pals.size()-1)
                     tmp+=pals[i]+" "; //adiciona um espaço entre as palavras
-                else 
+                else
                     tmp+=pals[i];
             }
 
