@@ -112,9 +112,9 @@ is the brother -> muda a variavel para seu tipo numerico
 
 is the sister -> muda a variavel para seu tipo de string
 
-x what is the brother y ou z -> vê qual numero é o maior entre y e z e armazena o **nome da maior variavel** em x
+x what is the brother y ou z -> vê qual numero é o maior entre y e z e armazena o **nome da maior variavel** em x, e muda o **valor numerico** para 1 caso seja verdadeiro
 
-x who is the sister y ou z -> menor numero entre y e z e armazena **nome da variavel** em x
+x who is the sister y ou z -> menor numero entre y e z e armazena **nome da variavel** em x, e muda o **valor numerico** para 1 caso seja verdadeiro
 
 x vamos procurar viver em igualdade com y -> igualar o valor numero de x com y
 
@@ -125,3 +125,6 @@ voce quer ser tudo -> inicio do if
 e não é de nada -> fim do if
 
 x e y é igual ao que, z? -> soma x com y e armazena em z
+
+eu nao vou parar de mesclar -> inicio do while
+enquanto x assim continuar -> continua o while enquanto x for 1

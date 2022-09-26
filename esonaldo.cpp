@@ -103,7 +103,7 @@ void ednaldo::start(std::string inputln, int file){
         //printa o nome da variavel que estiver armazenado dentro da variavel
         //especificada
         else if(pals[1]+" "+pals[2] == "is good"){
-            std::cout<<nomes[nomes_val[is_name]]<<"\n";
+            std::cout<<nomes[nomes_var[is_name]]<<"\n";
         }
 
         //Input
@@ -177,10 +177,14 @@ void ednaldo::start(std::string inputln, int file){
             is = get_arr_pos(pals[5]);
             is_ = get_arr_pos(pals[7]);
             if(is != -1 and is_ != -1){
-                if(nomes_val[is]>nomes_val[is_])
-                    nomes_val[is_name] = is;
-                else 
-                    nomes_val[is_name] = is_;
+                if(nomes_val[is]>nomes_val[is_]){
+                    nomes_val[is_name] = 1;
+                    nomes_var[is_name] = is;
+                }
+                else {
+                    nomes_var[is_name] = is_;
+                    nomes_val[is_name] = 0;
+                }
             }
         }
 
