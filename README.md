@@ -39,6 +39,8 @@ Variaveis são nomes que podem armazenar valores numericos ou palavras
 
 - `<var> pergunta: <frase que pode conter espaços>` > pede para que o usuario insira um valor para a variavel, a frase é opcional, podem ser palavras ou um valor numerico, isso será definido por `is the sister` ou `is the brother` (funciona como um input() em python)
 
+- `<var> fale o que quiser com <var2>` Compara duas strings, caso as duas sejam iguais o valor numerico da primeira variavel fica atribuido a 1
+
 ### Operações com variaveis
 
 - `<var1> vamos procurar viver em igualdade com <var2>` > faz com que o valor da primeira variavel seja igual ao da segunda
