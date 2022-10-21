@@ -1,8 +1,8 @@
 #include "esonaldo.h"
 
 //TODO:
-//COMPARACAO DE STRINGS
-//FLOAT
+//COMPARACAO DE STRINGS [X]
+//FLOAT                 [ ]
 
 
 bool isNumber(const std::string& str);
