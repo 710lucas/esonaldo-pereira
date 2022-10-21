@@ -1,8 +1,8 @@
 #include "esonaldo.h"
 
 //TODO:
-//COMPARACAO DE STRINGS
-//FLOAT
+//COMPARACAO DE STRINGS [X]
+//FLOAT                 [ ]
 
 
 bool isNumber(const std::string& str);
@@ -245,6 +245,16 @@ void ednaldo::start(std::string inputln, int file){
             nomes_val[is_name] = tmp1;
         }
 
+        //igualdade de strings, se uma for igual a outra, retorna 1
+        //Birina, fale o que quiser com Jorge
+        else if(pals[1]+pals[2]+pals[3]+pals[4]+pals[5] == "faleoquequisercom"){
+            nomes_val[is_name] = 0;
+            //por algum motivo esse coiso funciona, mas o == não
+            if(nomes_str[is_name].compare(nomes_str[get_arr_pos(pals[6])]) == 0){
+                nomes_val[is_name] = 1;
+            }
+        }
+
         
         else{
             std::cout<<"Comando invalido\nLinha: "<<inputln<<"\ne";
@@ -281,6 +291,7 @@ void ednaldo::start(std::string inputln, int file){
             // std::cout<<"reconheceu\n";
             started_a_while = true; // IMPORTANTE, falar que acabou o while
         }
+
         
         // else if(pals[0] == "enquanto"){
         //     std::cout<<"leeeel\n";
@@ -298,9 +309,11 @@ void ednaldo::start(std::string inputln, int file){
             O if é apenas considerado verdadeiro se for igual a 1
         */
         else if(pals[0]+" "+pals[1]+" "+pals[2]+" "+pals[3] == "voce quer ser tudo," or pals[0]+" "+pals[1]+" "+pals[2]+" "+pals[3] == "voce quer ser tudo"){
+
             int is_name_ = get_arr_pos(pals[4]);
             if (is_name_ != -1){
                 if(nomes_val[is_name_] != 1){
+
                     cond_bool = false;
                 }
                 /*
