@@ -199,10 +199,14 @@ void ednaldo::start(std::string inputln, int file){
             is = get_arr_pos(pals[5]);
             is_ = get_arr_pos(pals[7]);
             if(is != -1 and is_ != -1){
-                if(nomes_val[is]<nomes_val[is_])
-                    nomes_val[is_name] = is;
-                else 
-                    nomes_val[is_name] = is_;
+                if(nomes_val[is]<nomes_val[is_]){
+                    nomes_val[is_name] = 1;
+                    nomes_var[is_name] = is;
+                }
+                else {
+                    nomes_val[is_name] = 1;
+                    nomes_var[is_name] = is_;
+                }
             }
         }
         
@@ -395,7 +399,7 @@ std::vector<std::string> ednaldo::separar_pals(std::string inp){
 bool isNumber(const std::string& str)
 {
     for (char const &c : str) {
-        if (std::isdigit(c) == 0) return false;
+        if (std::isdigit(c) == 0 and c != '-') return false;
     }
     return true;
 }

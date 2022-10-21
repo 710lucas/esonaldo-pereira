@@ -5,8 +5,12 @@
 class ednaldo{
     private:
         std::vector<std::string> nomes{"Birina", "Joao", "Beberrão", "Chico", "Melancia", "God"};
+
+        //valor numerico
         std::vector<int> nomes_val{     0,         0,       0,         0,         0,       0};
         std::vector<std::string> nomes_str{ "0",  "0",       "0",     "0",      "0",      "0"};
+
+        //valor com a posição de outra variavel
         std::vector<int> nomes_var{     0,         0,       0,         0,         0,       0};
         
         /*
