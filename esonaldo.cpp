@@ -250,8 +250,7 @@ void ednaldo::start(std::string inputln, int file){
         else if(pals[1]+pals[2]+pals[3]+pals[4]+pals[5] == "faleoquequisercom"){
             nomes_val[is_name] = 0;
             //por algum motivo esse coiso funciona, mas o == não
-            if(nomes_str[is_name].compare(a)){
-                std::cout<<"BBBBB";
+            if(nomes_str[is_name].compare(nomes_str[get_arr_pos(pals[6])]) == 0){
                 nomes_val[is_name] = 1;
             }
         }
