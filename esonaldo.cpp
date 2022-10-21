@@ -1,5 +1,10 @@
 #include "esonaldo.h"
 
+//TODO:
+//COMPARACAO DE STRINGS
+//FLOAT
+
+
 bool isNumber(const std::string& str);
 
 void ednaldo::start(std::string inputln, int file){
