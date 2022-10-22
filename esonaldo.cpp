@@ -279,6 +279,7 @@ void ednaldo::start(std::string inputln, int file){
             nomes_tip.push_back("N");
         }
 
+        //comentarios
         else if(pals[0] == "//"){
             ;
         }
