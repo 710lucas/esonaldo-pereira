@@ -204,7 +204,7 @@ void ednaldo::start(std::string inputln, int file){
                     nomes_var[is_name] = is;
                 }
                 else {
-                    nomes_val[is_name] = 1;
+                    nomes_val[is_name] = 0;
                     nomes_var[is_name] = is_;
                 }
             }
@@ -277,6 +277,11 @@ void ednaldo::start(std::string inputln, int file){
             nomes_val.push_back(0);
             nomes_str.push_back("0");
             nomes_tip.push_back("N");
+        }
+
+        //comentarios
+        else if(pals[0] == "//"){
+            ;
         }
         
         else if(pals[1]+" "+pals[2]+" "+pals[3] == "is the sister"){
