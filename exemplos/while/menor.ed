@@ -1,6 +1,8 @@
 Chico is the brother
 Chico pergunta: Numero:
 
+// Comentario
+
 maior is the brother
 maior vamos procurar viver em igualdade com Chico
 
@@ -11,8 +13,6 @@ Continuar is the brother
 Continuar what is the brother Chico ou zero?
 
 verificador is the brother
-
-
 
 eu nao vou parar de mesclar 
 
@@ -29,7 +29,6 @@ e não é de nada
 Continuar what is the brother Chico ou zero?
 
 enquanto Continuar assim continuar
-
 
 
 maior respondeu
