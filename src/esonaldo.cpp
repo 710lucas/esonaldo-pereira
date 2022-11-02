@@ -257,6 +257,9 @@ void ednaldo::start(std::string inputln, int file){
             if(nomes_str[is_name].compare(nomes_str[get_arr_pos(pals[6])]) == 0){
                 nomes_val[is_name] = 1;
             }
+            else{
+                nomes_val[is_name] = 0;
+            }
         }
 
         
