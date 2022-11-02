@@ -131,6 +131,8 @@ x e y é igual ao que, z? -> soma x com y e armazena em z
 eu nao vou parar de mesclar -> inicio do while
 enquanto x assim continuar -> continua o while enquanto x for 1
 
+x fale o que quiser com y -> compara string x com string y, caso sejam iguais, valor numerico de x vira 1, caso contrario, fica 0
+
 # Dicas
 
 Para verificar se um numero é igual a outro, é possivel utilizar a subtração
