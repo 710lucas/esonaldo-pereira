@@ -118,7 +118,7 @@ def start(linha):
         variavel1 = getNome(linha.split()[0])
         variavel2 = getNome(linha.split()[2])
         variavel3 = getNome(linha.split()[7])
-        variavel1.float_val = variavel2.float_val + variavel3.float_val
+        variavel3.float_val = variavel2.float_val + variavel1.float_val
 
     elif(len(linha.split()) == 9 and "entre" == linha.split()[1] and "e" == linha.split()[3] and "qual é a diferença" in linha):
         variavel1 = getNome(linha.split()[0])
@@ -140,6 +140,7 @@ def start(linha):
             globals.started_while = False
         else:
             globals.in_while = False
+            globals.started_while = False
     
     elif("//" in linha or ("is the brother" in linha or "is the sister" in linha) or "e não é de nada" in linha):
         pass

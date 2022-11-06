@@ -1,0 +1,54 @@
+// Inicia as variaveis
+nmr1 is the brother
+nmr2 is the brother
+
+// Pede para o usuario informar as notas
+nmr1 pergunta: Diga a primeira nota: 
+nmr2 pergunta: Diga a segunda nota: 
+
+media is the brother
+soma_notas is the brother
+tmp2 is the brother
+
+nmr1 e nmr2 é igual ao que, soma_notas?
+
+// para multiplicar sem usar o operador de divisão
+// nós iremos subtrair o dividendo do divisor ate que
+// o dividendo seja menor que o divisor
+// e contaremos quantas vezes essa operação foi realizada
+// por exemplo: 9/3
+// 9 - 3 = 6 (operacao realizada 1 vez)
+// 6 -3 = 3 (operacação realizada duas vezes)
+// 3 -3 = 0 (operação realizada 3 vezes)
+
+
+// Cria o numero 2
+Dois is the brother
+Dois vale 2
+
+// cria o numero 1
+Um is the brother
+Um vale tudo
+
+// Vê se o while deve continuar
+Continuar is the brother
+
+// Continua caso o soma_notas (soma das duas notas) é maior que Dois
+Continuar, what is the brother, soma_notas ou Dois? 
+
+// Cria a variavel quantidade, que vai ver a quantidade de vezes
+// que a subtração da divisao foi feita
+Quantidade is the brother
+
+// inicia o valor de quantidade como 1
+Quantidade vale tudo
+
+// While da divisão
+eu não vou parar de mesclar
+
+Quantidade e Um é igual ao que, Quantidade?
+soma_notas, entre soma_notas e Dois, qual é a diferença?
+Continuar, what is the brother, soma_notas ou Dois?
+enquanto Continuar assim continuar
+
+Quantidade respondeu
