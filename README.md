@@ -45,7 +45,7 @@ Variaveis são nomes que podem armazenar valores numericos ou palavras
 
 - `<var1> vamos procurar viver em igualdade com <var2>` > faz com que o valor da primeira variavel seja igual ao da segunda
 
-- `<var1> what is the brother <var2> ou <var3>` > vê qual variavel é maior entre var2 e var3 e armazena o resultado em var1, ou seja, se var2 > var3, o valor de var2 ficará em var1, que poderá mostrar quem é o maior com o comando `<var1> is good` (confuso dmais, eu sei, veja os exemplos no final)
+- `<var1> what is the brother <var2> ou <var3>` > vê qual variavel é maior entre var2 e var3 e armazena o resultado em var1, ou seja, se var2 > var3, o valor de var2 ficará em var1, que poderá mostrar quem é o maior com o comando `<var1> is good` (confuso dmais, eu sei, veja os exemplos no final), além disso, o valor numerico de var1 fica 1, caso seja verdadeiro
 
 - `<var> is good` > coloca na tela o valor da variavel armazenado dentro de var
 
