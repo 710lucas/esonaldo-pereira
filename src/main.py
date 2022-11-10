@@ -31,3 +31,5 @@ for i in my_file:
                     ednaldo.start(x)
                 elif(not globals.executar and "e não é de nada" in x):
                     globals.executar = True
+
+input()
