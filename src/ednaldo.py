@@ -127,7 +127,7 @@ def start(linha):
         variavel1.float_val = variavel2.float_val - variavel3.float_val
 
 
-    elif (len(linha.split()) == 5 and ("voce quer ser tudo" in linha or "voce quer ser tudo," in linha)):
+    elif (len(linha.split()) == 5 and ("você quer ser tudo" in linha or "você quer ser tudo," in linha)):
         if(getNome(linha.split()[4]).float_val != 1):
             globals.executar = False
     
