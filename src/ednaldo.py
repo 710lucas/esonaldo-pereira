@@ -51,14 +51,14 @@ def start(linha):
             if(variavel.tipo == "N"):
                 print(variavel.float_val, end='')
             else:
-                print(variavel.string_val.replace('\n', ''), end=' ')
+                print(variavel.string_val, end='')
             
         except:
             print("A variavel passada não existe",linha.split()[1])
     
     elif( len(linha.split()) >= 2 and ("disse" == linha.split()[1] or "disse:" == linha.split()[1])):
         variavel = getNome(linha.split()[0])
-        variavel.string_val = linha.replace(linha.split()[0]+" "+linha.split()[1]+" ", "").replace('\n', '')
+        variavel.string_val = linha.replace(linha.split()[0]+" "+linha.split()[1]+" ", "")
         variavel.string_val = variavel.string_val.replace("\\n", '\n')
     
     elif (len(linha.split()) >= 2 and (linha.split()[1] in ["pergunta", "pergunta:"])):

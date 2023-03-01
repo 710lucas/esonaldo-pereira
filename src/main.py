@@ -24,6 +24,7 @@ posicoes_inicio_while = []
 qnt_whiles = 0
 
 while(posicao != len(linhas)):
+    # print("Linha sendo lida:", posicao)
     if(globals.executar and "e não é de nada" not in linhas[posicao] and "eu não vou parar de mesclar" not in linhas[posicao]):
         ednaldo.start(linhas[posicao])
 
@@ -38,12 +39,13 @@ while(posicao != len(linhas)):
 
     if("enquanto" in linhas[posicao] and "assim continuar" in linhas[posicao]):
         if(globals.in_while and qnt_whiles > 0):
-            posicao = posicoes_inicio_while[qnt_whiles-1]
+            posicao = posicoes_inicio_while[qnt_whiles-1]+1
         else:
             qnt_whiles-=1
+            posicao+=1
         
-    
-    posicao+=1
+    else:
+        posicao+=1
 
 print("[PROGRAMA ENCERRADO, APERTE ENTER PARA FECHAR]")
 input()
