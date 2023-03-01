@@ -13,23 +13,37 @@ with open(sys.argv[1], 'r', encoding='utf-8') as my_file:
 
 tmp_while = []
 
+linhas = []
+
 for i in my_file:
-    if(globals.executar and not globals.started_while):
-        ednaldo.start(i)
-    elif(not globals.executar and "e não é de nada" in i):
+
+    linhas.append(i)
+
+posicao = 0
+posicoes_inicio_while = []
+qnt_whiles = 0
+
+while(posicao != len(linhas)):
+    if(globals.executar and "e não é de nada" not in linhas[posicao] and "eu não vou parar de mesclar" not in linhas[posicao]):
+        ednaldo.start(linhas[posicao])
+
+    elif(not globals.executar and "e não é de nada" in linhas[posicao]):
         globals.executar = True
 
-    elif(globals.started_while and  "enquanto" not in i and not "assim continuar" in i and not globals.in_while):
-        tmp_while.append(i)
+    elif("eu não vou parar de mesclar" in linhas[posicao]):
+        tmp_while.append(linhas[posicao])
+        posicoes_inicio_while.append(posicao)
+        qnt_whiles += 1
+        
 
-    elif(globals.started_while and "enquanto" in i and "assim continuar" in i and not globals.in_while):
-        tmp_while.append(i)
-        ednaldo.start(i)
-        while(globals.in_while):
-            for x in tmp_while:
-                if(globals.executar):
-                    ednaldo.start(x)
-                elif(not globals.executar and "e não é de nada" in x):
-                    globals.executar = True
+    if("enquanto" in linhas[posicao] and "assim continuar" in linhas[posicao]):
+        if(globals.in_while and qnt_whiles > 0):
+            posicao = posicoes_inicio_while[qnt_whiles-1]
+        else:
+            qnt_whiles-=1
+        
+    
+    posicao+=1
 
+print("[PROGRAMA ENCERRADO, APERTE ENTER PARA FECHAR]")
 input()
