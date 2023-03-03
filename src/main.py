@@ -41,6 +41,7 @@ while(posicao != len(linhas)):
         if(globals.in_while and qnt_whiles > 0):
             posicao = posicoes_inicio_while[qnt_whiles-1]+1
         else:
+            posicoes_inicio_while.pop(qnt_whiles-1)
             qnt_whiles-=1
             posicao+=1
         
