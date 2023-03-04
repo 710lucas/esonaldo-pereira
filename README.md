@@ -36,7 +36,7 @@ Você vai precisar ter o java instalado
 
 Veja o gif abaixo
 
-![](https://raw.githubusercontent.com/Luxs710/esonaldo-pereira/main/gifs/explaining.gif)
+![](./videos/tutorial.mp4)
 
 ## How to use
 
