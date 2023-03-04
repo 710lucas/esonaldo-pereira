@@ -9,6 +9,13 @@ public class Main{
     public static void main(String[] args){
 
         Scanner sc = new Scanner(System.in);
+
+        if(args.length < 1){
+            args = new String[1];
+            System.out.print("Digite o nome/caminho do arquivo para executar: ");
+            args[0] = sc.nextLine();
+        }
+
         //read file
         if(!esonaldo.readFile(args[0])){
             System.out.println("Erro ao ler arquivo");
