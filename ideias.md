@@ -15,6 +15,7 @@ Ou seja, o codigo deve parecer com uma musica de ednaldo pereira
     - God
 
 ## Outras coisas
+
 [x] Vale nada/tudo:
     Coloca qualquer coisa igual a 0 ou 1
     Som [X]
