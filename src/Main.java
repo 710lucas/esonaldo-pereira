@@ -161,9 +161,19 @@ public class Main{
 
                 if(esonaldo.getVariavelByName(nomeVariavel).getNumerico() != 1.0)
                     pc = fimDoIf;
-                
-                
            }
+
+           else if(linhaAtual.contains("enquanto") && linhaAtual.contains("assim continuar")){
+                String nomeVariavel = getPalavraInLinha(pc, 1);
+                Variavel var = esonaldo.getVariavelByName(nomeVariavel);
+                for(int j = pc; j>0; j--){
+                    if(linhas.get(j).equals("eu não vou parar de mesclar") && var.getNumerico() == 1){
+                        pc = j-1;
+                        break;
+                    }
+                }
+           }
+
 
             pc+=1;
         }
