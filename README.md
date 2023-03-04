@@ -10,6 +10,10 @@ Esonaldo Pereira é uma [Esoteric language](https://esolangs.org/wiki/Esoteric_p
 
 Esonaldo Pereira is an [Esoteric language](https://esolangs.org/wiki/Esoteric_programming_language) which the code was made to look like musics from the brazilian singer Ednaldo Pereira
 
+
+
+
+
 ## Como compilar | How to compile
 
 Execute os seguintes comandos
@@ -34,9 +38,10 @@ OBS.: o nome do arquivo pode ser passado como argumento do comando java -jar
 
 Você vai precisar ter o java instalado
 
-Veja o gif abaixo
+Veja o video abaixo
 
-![](./videos/tutorial.mp4)
+https://user-images.githubusercontent.com/65160454/222925647-64e4547c-5a0e-4749-9331-91a81cc8316c.mp4
+
 
 ## How to use
 
@@ -48,7 +53,7 @@ You can pass the file name/path as an argument of the java -jar command
 
 You'll need to have java installed
 
-See the gif above
+See the video above
 
 -----
 
