@@ -149,6 +149,22 @@ public class Main{
                     var1.setNumerico(0);
            }
 
+           else if(linhaAtual.contains("você quer ser tudo")){
+                String nomeVariavel = getPalavraInLinha(pc, 4);
+                int fimDoIf = pc;
+                for(int j = pc; j<linhas.size(); j++){
+                    if(linhas.get(j).equals("e não é de nada")){
+                        fimDoIf = j-1;
+                        break;
+                    }
+                }
+
+                if(esonaldo.getVariavelByName(nomeVariavel).getNumerico() != 1.0)
+                    pc = fimDoIf;
+                
+                
+           }
+
             pc+=1;
         }
         

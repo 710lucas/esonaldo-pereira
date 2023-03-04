@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Array;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,8 +16,12 @@ public class Esonaldo{
         File file = new File(filename);
         try (Scanner fileScan = new Scanner(file)) {
 
-            while(fileScan.hasNextLine())
-                linhas.add(fileScan.nextLine());
+            while(fileScan.hasNext()){
+                String linha = fileScan.nextLine();
+                linha  = removeSpaces(linha);
+                if(!linha.isEmpty())
+                    linhas.add(linha);
+            }
             
 
         } catch (FileNotFoundException e) {
@@ -82,6 +87,24 @@ public class Esonaldo{
                 return true;
         }
         return false;
+    }
+
+
+    //tira os espaços iniciais de uma linha
+    //util para poder se utilizar tab
+    static String removeSpaces(String linha){
+
+        String out = "";
+        boolean started = false;
+        for(int i = 0; i<linha.length(); i++){
+            if(Character.isLetter(linha.charAt(i))){
+                started = true;
+            }
+            if(started)
+                out+=linha.charAt(i);
+        }
+
+        return out;
     }
 
 
