@@ -22,7 +22,8 @@ public class Esonaldo{
                 if(!linha.isEmpty())
                     linhas.add(linha);
             }
-            
+
+            fileScan.close();
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
