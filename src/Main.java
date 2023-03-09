@@ -174,10 +174,13 @@ public class Main{
             }
 
             else if(linhaAtual.contains("hora de te chamar")){
+                ArrayList<String> oldLinhasAtuais = new ArrayList<String>();
+                oldLinhasAtuais = linhasAtuais;
                 String nomeArquivo = getPalavraInLinha(pc, 4);
                 Esonaldo tmpEsonaldo = new Esonaldo();
                 tmpEsonaldo.readFile(nomeArquivo);
                 rodaLinhas(tmpEsonaldo.getLinhas());
+                linhasAtuais = oldLinhasAtuais;
             }
 
 
@@ -226,6 +229,7 @@ public class Main{
         catch(IndexOutOfBoundsException i){
             System.err.println(linhasAtuais.get(pc-1));
             System.err.println("Erro ao pegar a linha na posicao: "+(pc+1));
+            System.err.println("Erro ao pegar a linha na posicao: "+(pos));
             System.exit(0);
         }
     
