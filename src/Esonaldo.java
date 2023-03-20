@@ -11,6 +11,7 @@ public class Esonaldo{
 
     private ArrayList<String> linhas = new ArrayList<String>();
     private ArrayList<Variavel> variaveis = new ArrayList<Variavel>();
+    private int pc = 0;
 
     public boolean readFile(String filename){
         File file = new File(filename);
@@ -90,6 +91,9 @@ public class Esonaldo{
         return false;
     }
 
+    public int getPC(){return pc;}
+    public void setPC(int programCounter){pc = programCounter;}
+
 
     //tira os espaços iniciais de uma linha
     //util para poder se utilizar tab
@@ -107,6 +111,8 @@ public class Esonaldo{
 
         return out;
     }
+
+
 
 
 

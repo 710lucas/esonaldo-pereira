@@ -9,12 +9,15 @@ public class Main{
     static ArrayList<String> linhasAtuais;
     static Scanner sc = new Scanner(System.in);
 
-    public static void rodaLinhas(ArrayList<String> linhasPassadas){
+    public static void rodaLinhas(Esonaldo eso){
 
-        int pc = 0;//program counter
+        eso.setPC(0);
 
-        linhasAtuais = linhasPassadas;
+        linhasAtuais = eso.getLinhas();
+        ArrayList<String> linhasPassadas = eso.getLinhas();
+        int pc = eso.getPC();
         while(pc < linhasPassadas.size()){
+            pc = eso.getPC();
             String linhaAtual = linhasPassadas.get(pc);
 
             if(linhaAtual.contains("is the brother") && !getPalavraInLinha(pc, 1).equals("what")) {
@@ -179,12 +182,13 @@ public class Main{
                 String nomeArquivo = getPalavraInLinha(pc, 4);
                 Esonaldo tmpEsonaldo = new Esonaldo();
                 tmpEsonaldo.readFile(nomeArquivo);
-                rodaLinhas(tmpEsonaldo.getLinhas());
+                rodaLinhas(tmpEsonaldo);
                 linhasAtuais = oldLinhasAtuais;
             }
 
 
             pc+=1;
+            eso.setPC(pc);
         }
 
     }
@@ -205,7 +209,7 @@ public class Main{
             System.exit(0);
         }
 
-        rodaLinhas(linhas);
+        rodaLinhas(esonaldo);
         
 
 
