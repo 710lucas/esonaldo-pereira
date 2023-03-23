@@ -1,0 +1,31 @@
+teste is the brother
+teste vale 5
+qnt is the brother
+qnt vale nada
+continuar is the brother
+um is the brother
+um vale tudo
+continuar, what is the brother, teste ou qnt?
+newline is the sister
+newline disse: \n
+espaco is the sister
+espaco disse: _ _
+eu não vou parar de mesclar
+    newline respondeu
+    qnt respondeu
+    qnt e um é igual ao que, qnt?
+    teste2 is the brother
+    teste2 vale 2
+    qnt2 is the brother
+    qnt2 vale nada
+    continuar2 is the brother
+    continuar2, what is the brother, teste2 ou qnt2?
+    newline respondeu
+    eu não vou parar de mesclar
+        qnt2 respondeu
+        espaco respondeu
+        qnt2 e um é igual ao que, qnt2?
+        continuar2, what is the brother, teste2 ou qnt2?
+    enquanto continuar2 assim continuar
+    continuar, what is the brother, teste ou qnt?
+enquanto continuar assim continuar

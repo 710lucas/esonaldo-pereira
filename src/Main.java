@@ -15,6 +15,8 @@ public class Main{
 
         linhasAtuais = eso.getLinhas();
         ArrayList<String> linhasPassadas = eso.getLinhas();
+        eso.findFimWhile(linhasPassadas);
+        eso.findInicioWhile(linhasPassadas);
         int pc = eso.getPC();
         while(pc < linhasPassadas.size()){
             pc = eso.getPC();
@@ -165,14 +167,17 @@ public class Main{
                     pc = fimDoIf;
             }
 
+
             else if(linhaAtual.contains("enquanto") && linhaAtual.contains("assim continuar")){
                 String nomeVariavel = getPalavraInLinha(pc, 1);
                 Variavel var = esonaldo.getVariavelByName(nomeVariavel);
-                for(int j = pc; j>0; j--){
-                    if(linhas.get(j).equals("eu não vou parar de mesclar") && var.getNumerico() == 1){
-                        pc = j-1;
-                        break;
-                    }
+                if(eso.getWhilePositions().size() != eso.getFinalWhilePositions().size()){
+                    System.err.println("erro ao definir os while");
+                    System.exit(0);
+                }
+                if(var.getNumerico() == 1){
+                    pc = eso.getWhilePositions().get(eso.getFinalWhilePositions().indexOf(pc));
+                    eso.setPC(pc);
                 }
             }
 

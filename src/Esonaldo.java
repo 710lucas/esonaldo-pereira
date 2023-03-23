@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 import javax.lang.model.element.VariableElement;
@@ -12,6 +13,9 @@ public class Esonaldo{
     private ArrayList<String> linhas = new ArrayList<String>();
     private ArrayList<Variavel> variaveis = new ArrayList<Variavel>();
     private int pc = 0;
+
+    private ArrayList<Integer> whilePositions = new ArrayList<Integer>();
+    private ArrayList<Integer> finalWhilePositions = new ArrayList<Integer>();
 
     public boolean readFile(String filename){
         File file = new File(filename);
@@ -83,6 +87,26 @@ public class Esonaldo{
         return getVariavelByName(nome);
     }
 
+    public ArrayList<Integer> getWhilePositions(){
+        return whilePositions;
+    }
+
+    public void setWhilePositions(ArrayList<Integer> newPositions){
+        whilePositions = newPositions;
+    }
+
+    public void setWhilePositions(int pos, int element){
+        whilePositions.set(pos, element);
+    }
+
+    public ArrayList<Integer> getFinalWhilePositions(){
+        return finalWhilePositions;
+    }
+
+    public void addWhilePositions(int element){
+        whilePositions.add(element);
+    }
+
     public boolean variavelExiste(String nome){
         for(int i = 0; i<variaveis.size(); i++){
             if(variaveis.get(i).getNome().equals(nome))
@@ -113,6 +137,32 @@ public class Esonaldo{
     }
 
 
+    public ArrayList<Integer> findInicioWhile(ArrayList<String> linhas){
+        ArrayList<Integer> output = new ArrayList<>();
+        for(int i  = 0; i<linhas.size(); i++){
+            if(linhas.get(i).equals("eu não vou parar de mesclar")){
+                output.add(i);
+            }
+        }
+
+        whilePositions = output;
+        return output;
+    }//eu não vou parar de mesclar
+
+    public ArrayList<Integer> findFimWhile(ArrayList<String> linhas){
+        ArrayList<Integer> output = new ArrayList<>();
+        for(int i  = 0; i<linhas.size(); i++){
+            if(linhas.get(i).contains("enquanto") && linhas.get(i).contains("assim continuar")){
+                output.add(i);
+            }
+        }
+
+        Collections.reverse(output);
+
+        finalWhilePositions = output;
+
+        return output;
+    }//enquanto x assim continuar
 
 
 
