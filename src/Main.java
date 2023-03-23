@@ -75,8 +75,9 @@ public class Main{
             else if(linhaAtual.contains("respondeu")){
                 String nomeVariavel = getPalavraInLinha(pc, 0);
                 Variavel var = esonaldo.getVariavelByName(nomeVariavel);
-                if(var.getTipo() == 1)
-                    System.out.print(var.getString().replace("\\n", "\n"));
+                if(var.getTipo() == 1) {
+                    System.out.print(var.getString().replace("\\n", "\n").replace("[espaço]", " "));
+                }
                 else
                     System.out.print(var.getNumerico());
             }
