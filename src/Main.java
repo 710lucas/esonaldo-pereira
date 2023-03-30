@@ -156,16 +156,21 @@ public class Main{
 
             else if(linhaAtual.contains("você quer ser tudo")){
                 String nomeVariavel = getPalavraInLinha(pc, 4);
+
                 int fimDoIf = pc;
-                for(int j = pc; j<linhas.size(); j++){
-                    if(linhas.get(j).equals("e não é de nada")){
+                for(int j = pc; j<linhasAtuais.size(); j++){
+                    if(linhasAtuais.get(j).equals("e não é de nada")){
+//                        System.out.println(j);
                         fimDoIf = j-1;
                         break;
                     }
                 }
 
-                if(esonaldo.getVariavelByName(nomeVariavel).getNumerico() != 1.0)
+                if(esonaldo.getVariavelByName(nomeVariavel).getNumerico() != 1.0){
                     pc = fimDoIf;
+                    eso.setPC(pc);
+                }
+
             }
 
 

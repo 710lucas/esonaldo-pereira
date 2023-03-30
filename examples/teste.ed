@@ -1,11 +1,12 @@
-nm1 is the brother
-nm1 vale tudo
-nm2 is the brother
-nm2 vale 2
-hora de te chamar soma.ed
-Birina is the sister
-Birina disse: opaaaa2
-newline is the sister
-newline disse: \n
-newline respondeu
-Birina respondeu
+nmr is the brother
+nmr pergunta: digai:
+
+você quer ser tudo, nmr
+    nmr2 is the brother
+    nmr2 pergunta: digai2:
+    você quer ser tudo, nmr2
+        Birina is the sister
+        Birina disse: 11123
+        Birina respondeu
+    e não é de nada
+e não é de nada
