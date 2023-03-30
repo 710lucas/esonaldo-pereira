@@ -192,6 +192,10 @@ public class Main{
                 linhasAtuais = oldLinhasAtuais;
             }
 
+            else{
+                System.err.println("Comando não encontrado: "+linhaAtual);
+            }
+
 
             pc+=1;
             eso.setPC(pc);

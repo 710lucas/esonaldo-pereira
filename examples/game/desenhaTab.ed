@@ -13,6 +13,9 @@ um vale tudo
 parte is the sister
 parte disse: *[espaço]
 
+jogador is the sister
+jogador disse: 0[espaço]
+
 continuarx is the brother
 continuary is the brother
 
@@ -28,9 +31,29 @@ eu não vou parar de mesclar
     qnty vale nada
     continuary what is the brother, taby ou qnty?
     eu não vou parar de mesclar
+
+        diferenca is the brother
+        diferenca entre px e qnty, qual é a diferença?
+        diferenca e um é igual ao que, diferenca?
+
+        teste1 is the brother
+        teste2 is the brother
+
+        teste1 what is the brother, px ou qnty?
+        teste2 what is the brother, qnty ou px?
+
         qnty e um é igual ao que, qnty?
 
-        parte respondeu
+        você quer ser tudo, diferenca
+            jogador respondeu
+        e não é de nada
+
+        você quer ser tudo, teste1
+            parte respondeu
+        e não é de nada
+        você quer ser tudo, teste2
+            parte respondeu
+        e não é de nada
 
         continuary what is the brother, taby ou qnty?
     enquanto continuary assim continuar
