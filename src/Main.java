@@ -197,7 +197,7 @@ public class Main{
                 linhasAtuais = oldLinhasAtuais;
             }
 
-            else{
+            else if(!linhaAtual.equals("e não é de nada")&&!linhaAtual.equals("eu não vou parar de mesclar")){
                 System.err.println("Comando não encontrado: "+linhaAtual);
             }
 
