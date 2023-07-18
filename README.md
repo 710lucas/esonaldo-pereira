@@ -4,7 +4,7 @@
 
 ## Sobre
 
-Esonaldo Pereira é uma [Esoteric language](https://esolangs.org/wiki/Esoteric_programming_language) na qual o código fonte foi feito para ser paecido com musicas do Mestre.
+Esonaldo Pereira é uma [Esoteric language](https://esolangs.org/wiki/Esoteric_programming_language) na qual o código fonte foi feito para ser parecido com musicas do Mestre.
 
 ## About
 
