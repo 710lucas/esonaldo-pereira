@@ -61,7 +61,7 @@ See the video above
 
 Para contribuir, basta procurar uma função que seria interessante adicionar na linguagem de programação e procurar em alguma música/vídeo o ednaldo pereira falando algo que possa ser usado para nomear a função, em seguida você pode criar um issue ou contribuir diretamente e fazendo um push request
 
-Para ter um acesso mais fácil às letras do ednaldo pereira, eu criei um script simples para ajudar a recupera-las do site (letras.mus.br)[https://letras.mus.br/ednaldo-pereira], basta acessar o link informado (que corresponde à página do ednaldo pereira), abrir o menu de inspecionar do navegador e rodar o seguinte código:
+Para ter um acesso mais fácil às letras do ednaldo pereira, eu criei um script simples para ajudar a recupera-las do site [letras.mus.br](https://letras.mus.br/ednaldo-pereira), basta acessar o link informado (que corresponde à página do ednaldo pereira), abrir o menu de inspecionar do navegador e rodar o seguinte código:
 
 ```js
 letras = ""
